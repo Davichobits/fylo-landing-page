@@ -4,15 +4,20 @@ interface Props {
   src: string;
   alt: string;
   text: string;
+  width: number;
+  height: number;
 }
-const {src, alt, text} = Astro.props;
+const {src, alt, text, width, height} = Astro.props;
 ---
-<div class='flex items-start gap-4 mb-4'>
-  <Image
-    src={src}
-    alt={alt}
-    width='24'
-    height='24'
-  />
+<div class='flex items-start mb-4'>
+  <div class="w-[40px] flex-shrink-0">
+    <Image
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      class="mt-1"
+    />
+  </div>
   <p>{text}</p>
 </div>
