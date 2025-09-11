@@ -1,7 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import {
+	Hero,
+	MainImage,
+	Navbar,
+	Features,
+	Share,
+	Team,
+	Form,
+	Footer,
+} from '../compontents'
+import BackgroundMobile from '../assets/images/bg-curvy-mobile.svg';
+import Image from 'astro/components/Image.astro';
 ---
 
 <Layout>
-	
+
+	<section class="p-6 relative border border-white h-[420px]">
+		<Navbar />
+		<MainImage />
+		<Image class="absolute bottom-0 left-0 -z-10 w-full" src={BackgroundMobile} alt="Background" width="326" height="200" />
+	</section>
+
+	<section class="p-6 relative border border-white bg-Navy-900 pb-[327px]">
+		<Hero />
+		<Features />
+		<Share />
+		<Team />
+	</section>
+
+	<section class="p-6 pb-16 bg-Navy-900 relative">
+		<Form />
+		<Footer />
+	</section>
 </Layout>

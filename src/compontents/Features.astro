@@ -1,0 +1,46 @@
+---
+
+interface Feature {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const features: Feature[] = [
+  {
+    title: "Access your files, anywhere",
+    description:
+      "The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.",
+    icon: "/images/icon-access-anywhere.svg",
+  },
+  {
+    title: "Security you can trust",
+    description:
+      "2-factor authentication and user-controlled encryption are just a couple of the security features we allow to help secure your files.",
+    icon: "/images/icon-security.svg",
+  },
+  {
+    title: "Real-time collaboration",
+    description:
+      "Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.",
+    icon: "/images/icon-collaboration.svg",
+  },
+  {
+    title: "Store any type of file",
+    description:
+      "Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all file types to be securely stored and shared.",
+    icon: "/images/icon-any-file.svg",
+  },
+];
+---
+<section id="features" class="mt-[140px] flex flex-col gap-20">
+  {features.map((feature) => (
+    <div class="flex flex-col items-center text-center">
+      <img src={feature.icon} alt={feature.title} class="mb-6" />
+      <div>
+        <h3 class="font-bold mb-2">{feature.title}</h3>
+        <p>{feature.description}</p>
+      </div>
+    </div>
+  ))}
+</section>
