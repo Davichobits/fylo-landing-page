@@ -1,20 +1,14 @@
 ---
-import Image from 'astro/components/Image.astro'
-
+import type { JSX } from "astro/jsx-runtime";
 interface Props {
-  src: string;
-  alt: string;
+  svg: JSX.Element;
   url: string;
 }
-const { src, alt, url } = Astro.props;
+const { svg: Svg, url } = Astro.props;
 ---
-<li class="border border-white size-[25px] rounded-full p-1 hover:border-Teal-200 hover:text-Teal-200">
+
+<li class="border border-white size-[25px] rounded-full p-1 text-white hover:border-Teal-200 hover:text-Teal-200">
   <a href={url}>
-    <Image
-      src={src}
-      alt={alt}
-      width='24'
-      height='24'
-    />
+    <Svg class="w-full h-full" />
   </a>
 </li>

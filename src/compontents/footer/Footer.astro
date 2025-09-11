@@ -3,29 +3,29 @@ import Logo from '../../assets/images/logo.svg';
 import Image from 'astro/components/Image.astro';
 import ContactItem from './ContactItem.astro';
 import MediaItem from './MediaItem.astro';
+import FacebookIcon from '/public/images/facebook.svg';
+import TwitterIcon from '/public/images/x.svg';
+import InstagramIcon from '/public/images/instagram.svg';
+import type { JSX } from "astro/jsx-runtime"; 
 
 import { contactItems } from '../../const/contact-items';
 
 interface MediaItem {
-  src: string;
-  alt: string;
+  svg: JSX.Element;
   url: string;
 }
 
 const mediaItems: MediaItem[] = [
   {
-    src: '/images/x.svg',
-    alt: 'X icon',
+    svg: FacebookIcon,
     url: '#',
   },
   {
-    src: '/images/instagram.svg',
-    alt: 'Instagram icon',
+    svg: TwitterIcon,
     url: '#',
   },
   {
-    src: '/images/facebook.svg',
-    alt: 'Facebook icon',
+    svg: InstagramIcon,
     url: '#',
   },
 ];
