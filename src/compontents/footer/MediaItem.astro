@@ -1,0 +1,20 @@
+---
+import Image from 'astro/components/Image.astro'
+
+interface Props {
+  src: string;
+  alt: string;
+  url: string;
+}
+const { src, alt, url } = Astro.props;
+---
+<li class="border border-white size-[25px] rounded-full p-1 hover:border-Teal-200 hover:text-Teal-200">
+  <a href={url}>
+    <Image
+      src={src}
+      alt={alt}
+      width='24'
+      height='24'
+    />
+  </a>
+</li>
