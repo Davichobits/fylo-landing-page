@@ -33,7 +33,7 @@ const teamMembers: Members[] = [
 
 <section
   id='team'
-  class='flex flex-col gap-6 items-center mt-[150px] pt-6 relative max-w-[480px] mx-auto'
+  class=' items-center mt-[150px] pt-6 relative max-w-[480px] mx-auto lg:max-w-full'
 >
   <Image
     width='24'
@@ -42,18 +42,20 @@ const teamMembers: Members[] = [
     class='absolute top-1 left-8'
     src='/images/bg-quotes.png'
   />
-  {
-    teamMembers.map(({ quote, image, name, role }: Members) => (
-      <div class='bg-Navy-800 rounded-sm p-6'>
-        <blockquote class='text-xs/6 mb-4'>{quote}</blockquote>
-        <div class='flex gap-2'>
-          <img src={image} alt={name} class='size-6 rounded-full' />
-          <div>
-            <h3 class='font-bold text-xs tracking-wider'>{name}</h3>
-            <p class='text-xs tracking-wider'>{role}</p>
+  <div class="flex flex-col gap-6 lg:flex-row lg:gap-10">
+    {
+      teamMembers.map(({ quote, image, name, role }: Members) => (
+        <div class='bg-Navy-800 rounded-sm p-6'>
+          <blockquote class='text-xs/6 mb-4'>{quote}</blockquote>
+          <div class='flex gap-2'>
+            <img src={image} alt={name} class='size-6 rounded-full' />
+            <div>
+              <h3 class='font-bold text-xs tracking-wider'>{name}</h3>
+              <p class='text-xs tracking-wider'>{role}</p>
+            </div>
           </div>
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </section>
