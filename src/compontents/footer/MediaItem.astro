@@ -1,0 +1,14 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+interface Props {
+  svg: JSX.Element;
+  url: string;
+}
+const { svg: Svg, url } = Astro.props;
+---
+
+<li class="size-[25px] rounded-full p-1 text-white hover:border-Teal-200 hover:text-Teal-200">
+  <a href={url}>
+    <Svg class="w-full h-full" />
+  </a>
+</li>
