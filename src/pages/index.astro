@@ -2,6 +2,7 @@
 import Image from 'astro/components/Image.astro';
 import Ilustration from '../assets/images/illustration-intro.png';
 import BackgroundMobile from '../assets/images/bg-curvy-mobile.svg';
+import BackgroundDesktop from '../assets/images/bg-curvy-desktop.svg';
 import Layout from "../layouts/Layout.astro";
 import {
 	Hero,
@@ -16,7 +17,7 @@ import {
 
 <Layout>
 
-	<section class="p-6 relative h-[420px] bg-Navy-850">
+	<section class="p-6 relative h-[420px] bg-Navy-850 sm:p-14 sm:h-[640px]">
 		<Navbar />
 		<Image 
 			class="mx-auto mt-12 relative z-10"
@@ -26,22 +27,29 @@ import {
 			width="304"
 		/>
 		<Image 
-			class="absolute bottom-0 left-0 w-full"
+			class="absolute bottom-0 left-0 w-full sm:hidden"
 			src={BackgroundMobile}
+			alt="Background" 
+			width="326"
+			height="200"
+		/>
+		<Image 
+			class="absolute bottom-0 left-0 w-full hidden sm:block"
+			src={BackgroundDesktop}
 			alt="Background" 
 			width="326"
 			height="200"
 		/>
 	</section>
 
-	<section class="p-6 relative bg-Navy-900 pb-[327px]">
+	<section class="p-6 relative bg-Navy-900 pb-[327px] sm:pb-[230px] sm:p-14">
 		<Hero />
 		<Features />
 		<Share />
 		<Team />
 	</section>
 
-	<section class="p-6 pb-16 bg-Navy-950 relative">
+	<section class="p-6 pb-16 bg-Navy-950 relative sm:p-14">
 		<Form />
 		<Footer />
 	</section>

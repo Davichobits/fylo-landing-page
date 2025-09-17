@@ -11,43 +11,49 @@ const teamMembers: Members[] = [
     name: 'Satish Patel',
     role: 'Founder & CEO, Huddle',
     image: '/images/profile-1.jpg',
-    quote: 'Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.'
+    quote:
+      'Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.',
   },
   {
     name: 'Bruce McKenzie',
     role: 'Founder & CEO, Huddle',
     image: '/images/profile-2.jpg',
-    quote: 'Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.'
+    quote:
+      'Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.',
   },
   {
     name: 'Iva Boyd',
     role: 'Founder & CEO, Huddle',
     image: '/images/profile-3.jpg',
-    quote: 'Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.'
-  }
+    quote:
+      'Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.',
+  },
 ];
 ---
 
-<section id="team" class="flex flex-col gap-6 items-center mt-[150px] pt-6 relative">
-  <Image 
-    width="24" 
-    height="24"
-    alt="Quotes" 
-    class="absolute top-1 left-8"
-    src="/images/bg-quotes.png" 
+<section
+  id='team'
+  class='flex flex-col gap-6 items-center mt-[150px] pt-6 relative max-w-[480px] mx-auto'
+>
+  <Image
+    width='24'
+    height='24'
+    alt='Quotes'
+    class='absolute top-1 left-8'
+    src='/images/bg-quotes.png'
   />
-  {teamMembers.map(({ quote, image, name, role }: Members) => (
-    <div class="bg-Navy-800 rounded-sm p-6 w-[280px]">
-      <blockquote class="text-sm/6 mb-4 text-[10px]">{quote}</blockquote>
-      <div class="flex gap-2">
-        <img src={image} alt={name} class="size-6 rounded-full" />
-        <div>
-          <h3 class="font-bold text-[10px] tracking-wider">{name}</h3>
-          <p class="text-sm text-[7px] tracking-wider">{role}</p>
+  {
+    teamMembers.map(({ quote, image, name, role }: Members) => (
+      <div class='bg-Navy-800 rounded-sm p-6'>
+        <blockquote class='text-xs/6 mb-4'>{quote}</blockquote>
+        <div class='flex gap-2'>
+          <img src={image} alt={name} class='size-6 rounded-full' />
+          <div>
+            <h3 class='font-bold text-xs tracking-wider'>{name}</h3>
+            <p class='text-xs tracking-wider'>{role}</p>
+          </div>
         </div>
       </div>
-    </div>
-  ))}
-</section>
-
+    ))
+  }
 </section>
