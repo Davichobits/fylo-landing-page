@@ -1,13 +1,30 @@
 ---
 import {Button} from '../compontents'
+
+export const prerender = false; // Not needed in 'server' mode
+
+if (Astro.request.method === "POST") {
+  console.log("Form submitted");
+  try {
+    const data = await Astro.request.formData();
+    const email = data.get("email");
+    alert(`Se ha enviado un correo a: ${email}`);
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
-<form class="absolute text-center py-10 px-6 mt-[-150px] w-[336px] sm:w-[480px] inset-0 h-[356px] m-auto bg-Navy-850 rounded-[9px] lg:w-[863px] lg:px-20 lg:py-12" >
+<form method="post" class="absolute text-center py-10 px-6 mt-[-150px] w-[336px] sm:w-[480px] inset-0 h-[356px] m-auto bg-Navy-850 rounded-[9px] lg:w-[863px] lg:px-20 lg:py-12" >
   <h2 class="font-bold mb-4 text-[20px] lg:text-[40px]">Get early access today</h2>
   <p class="text-sm mb-8">It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
   <div class="lg:flex lg:gap-6">
     <input
       type="text"
+      name="email"
+      required
       placeholder="email@example.com"
       class="bg-white w-full h-12 placeholder:text-gray-400 text-center rounded-3xl mb-6 lg:flex-2"
     >
