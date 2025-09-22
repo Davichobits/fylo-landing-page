@@ -3,15 +3,10 @@ import Image from 'astro/components/Image.astro'
 import Logo from '../assets/images/logo.svg'
 ---
 
-<header class="flex justify-between items-center p-6">
-  <a href="/">
-    <Image src={Logo} alt="Logo" width="80" height="20" />
-  </a>
-  <nav>
+<nav>
     <ul class="flex gap-6">
       <li><a class="hover:text-Teal-200" href="#features">Features</a></li>
       <li><a class="hover:text-Teal-200" href="#team">Team</a></li>
       <li><a class="hover:text-Teal-200" href="#sign-up-form">Sign In</a></li>
     </ul>
   </nav>
-</header>

@@ -1,7 +1,11 @@
 ---
-import { Navbar, Footer } from "../compontents";
-
+import { Navbar, Footer, Header } from "../compontents";
 import "../styles/global.css";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 <html lang="en">
 	<head>
@@ -9,11 +13,13 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
 	</head>
 	<body class="bg-Navy-850 text-white font-Open-Sans ">
 		<main class="mx-auto">
-			<Navbar />
+			<Header>
+				<Navbar />
+			</Header>
       <slot />
 			<Footer />
     </main>
