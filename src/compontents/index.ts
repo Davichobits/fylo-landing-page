@@ -6,3 +6,4 @@ export {default as Team } from './Team.astro';
 export {default as Footer} from './footer/Footer.astro';
 export {default as Form} from './Form.astro';
 export {default as Button} from './Button.astro';
+export {default as Header} from './Header.astro';
