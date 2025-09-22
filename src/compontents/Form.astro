@@ -15,9 +15,9 @@ if (Astro.request.method === "POST") {
 ---
 
 <form 
-  method="post"
-  enctype="application/x-www-form-urlencoded"
-  class="absolute text-center py-10 px-6 mt-[-150px] w-[336px] sm:w-[480px] inset-0 h-[356px] m-auto bg-Navy-850 rounded-[9px] lg:w-[863px] lg:px-20 lg:py-12" 
+  id="sign-up-form"
+  method="post" 
+  class="absolute z-10 text-center py-10 px-6 mb-[-150px] w-[336px] sm:w-[480px] inset-0 h-[356px] m-auto bg-Navy-850 rounded-[9px] lg:w-[863px] lg:px-20 lg:py-12" 
   >
   
   <h2 class="font-bold mb-4 text-[20px] lg:text-[40px]">Get early access today</h2>
@@ -26,7 +26,7 @@ if (Astro.request.method === "POST") {
   
   <div class="lg:flex lg:gap-6">
     <input
-      type="email"
+      type="text"
       name="email"
       required
       placeholder="email@example.com"

@@ -1,0 +1,82 @@
+---
+import Image from 'astro/components/Image.astro';
+import Layout from "../layouts/Layout.astro";
+import { Button } from '../compontents';
+import BackgroundMobile from '../assets/images/bg-curvy-mobile.svg';
+import BackgroundDesktop from '../assets/images/bg-curvy-desktop.svg';
+import TeamImage from '/public/images/illustration-stay-productive.png';
+---
+
+<Layout>
+  <section class="p-6 relative h-[420px] bg-Navy-850 sm:p-14 sm:h-[500px]">
+    <Image 
+      class="absolute bottom-0 left-0 w-full sm:hidden"
+      src={BackgroundMobile}
+      alt="Background" 
+      width="326"
+      height="200"
+    />
+    <Image 
+      class="absolute bottom-0 left-0 w-full hidden sm:block"
+      src={BackgroundDesktop}
+      alt="Background" 
+      width="326"
+      height="200"
+    />
+    <div class="mt-20 text-center z-10 relative">
+      <h1 class="text-center text-xl font-Raleway font-bold sm:text-[40px]">About Fylo</h1>
+      <p class="text-center text-sm mt-6 px-4 sm:text-xl sm:my-12 max-w-[720px] mx-auto">Learn more about our mission to provide secure cloud storage and collaboration tools for everyone.</p>
+    </div>
+  </section>
+
+  <section class="p-6 relative bg-Navy-900 pb-[100px] sm:pb-[150px] sm:p-14">
+    <div class="max-w-[800px] mx-auto mt-10">
+      <h2 class="font-bold text-xl mb-8 font-Raleway sm:text-2xl">Our Story</h2>
+      
+      <p class="mb-6">Founded in 2015, Fylo began with a simple mission: to create a secure, accessible platform where people could store and share their most important files. What started as a small team of passionate developers has grown into a global company serving millions of users worldwide.</p>
+      
+      <p class="mb-10">Our team is dedicated to continuous innovation, focusing on security, accessibility, and user experience. We believe that everyone should have access to reliable cloud storage without compromising on security or ease of use.</p>
+
+      <div class="mt-16 mb-16">
+        <Image 
+          src={TeamImage}
+          alt="Fylo Team"
+          width="540"
+          height="400"
+          class="mx-auto mb-10"
+        />
+      </div>
+
+      <h2 class="font-bold text-xl mb-8 font-Raleway sm:text-2xl">Our Values</h2>
+      
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 mb-16">
+        <div class="bg-Navy-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-4">Security First</h3>
+          <p>We prioritize the security of your data above all else, implementing industry-leading encryption and authentication methods to keep your files safe.</p>
+        </div>
+        
+        <div class="bg-Navy-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-4">Accessibility</h3>
+          <p>We believe your files should be accessible from anywhere, on any device, whenever you need them.</p>
+        </div>
+        
+        <div class="bg-Navy-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-4">Collaboration</h3>
+          <p>We make it easy to share and collaborate on files with colleagues, friends, and family without complicated processes.</p>
+        </div>
+        
+        <div class="bg-Navy-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-4">Innovation</h3>
+          <p>We're constantly improving our platform with new features and technologies to provide the best possible experience.</p>
+        </div>
+      </div>
+
+      <h2 class="font-bold text-xl mb-8 font-Raleway sm:text-2xl">Join Our Team</h2>
+      <p class="mb-8">We're always looking for talented individuals to join our team. If you're passionate about creating innovative solutions and want to be part of our mission, check out our current openings.</p>
+      
+      <div class="text-center">
+        <Button text='View Job Openings' styles="w-[240px]" />
+      </div>
+    </div>
+  </section>
+</Layout>
