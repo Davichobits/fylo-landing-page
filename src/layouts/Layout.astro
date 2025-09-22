@@ -1,5 +1,5 @@
 ---
-import Navbar from "../compontents/Navbar.astro";
+import { Navbar, Footer } from "../compontents";
 
 import "../styles/global.css";
 ---
@@ -11,9 +11,11 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="bg-gray-600 text-white font-Open-Sans ">
-    <main class="mx-auto">
+	<body class="bg-Navy-850 text-white font-Open-Sans ">
+		<main class="mx-auto">
+			<Navbar />
       <slot />
+			<Footer />
     </main>
 	</body>
 </html>
