@@ -1,0 +1,18 @@
+---
+import { Button } from './index';
+
+interface Props {
+  title: string;
+  type: string;
+  description: string;
+}
+
+const { title, type, description } = Astro.props;
+---
+
+<div class="bg-Navy-800 p-6 rounded-lg">
+  <h3 class="font-bold mb-2">{title}</h3>
+  <p class="text-sm text-gray-300 mb-4">{type}</p>
+  <p class="mb-4">{description}</p>
+  <Button text='Apply Now' styles="w-[140px] text-sm" />
+</div>
