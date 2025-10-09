@@ -1,0 +1,82 @@
+---
+import Image from 'astro/components/Image.astro';
+import Layout from "../layouts/Layout.astro";
+import { Button, JobPosition } from '../compontents';
+import BackgroundMobile from '../assets/images/bg-curvy-mobile.svg';
+import BackgroundDesktop from '../assets/images/bg-curvy-desktop.svg';
+import { positions } from '../const/positions';
+---
+
+<Layout title="Jobs at Fylo">
+  <section class="p-6 relative h-[420px] bg-Navy-850 sm:p-14 sm:h-[500px]">
+    <Image 
+      class="absolute bottom-0 left-0 w-full sm:hidden"
+      src={BackgroundMobile}
+      alt="Background" 
+      width="326"
+      height="200"
+    />
+    <Image 
+      class="absolute bottom-0 left-0 w-full hidden sm:block"
+      src={BackgroundDesktop}
+      alt="Background" 
+      width="326"
+      height="200"
+    />
+    <div class="mt-20 text-center z-10 relative">
+      <h1 class="text-center text-xl font-Raleway font-bold sm:text-[40px]">Join Our Team</h1>
+      <p class="text-center text-sm mt-6 px-4 sm:text-xl sm:my-12 max-w-[720px] mx-auto">Discover exciting career opportunities at Fylo and help us shape the future of cloud storage.</p>
+    </div>
+  </section>
+
+  <section class="p-6 relative bg-Navy-900 pb-[100px] sm:pb-[150px] sm:p-14">
+    <div class="max-w-[800px] mx-auto mt-10">
+      <h2 class="font-bold text-xl mb-8 font-Raleway sm:text-2xl">Why Work With Us</h2>
+      
+      <p class="mb-6">At Fylo, we're building the future of secure cloud storage and collaboration. Our team is passionate about creating innovative solutions that help people and businesses work more efficiently and securely.</p>
+      
+      <p class="mb-10">We offer competitive salaries, flexible work arrangements, comprehensive benefits, and a supportive, inclusive work environment where your ideas and contributions are valued.</p>
+
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 mb-16">
+        <div class="bg-Navy-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-4">Remote-First Culture</h3>
+          <p>Work from anywhere with our distributed team spread across the globe. We focus on results, not where you work from.</p>
+        </div>
+        
+        <div class="bg-Navy-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-4">Professional Growth</h3>
+          <p>Continuous learning opportunities, mentorship programs, and career advancement paths to help you grow.</p>
+        </div>
+        
+        <div class="bg-Navy-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-4">Work-Life Balance</h3>
+          <p>Flexible schedules, generous PTO, and wellness programs to ensure you stay healthy and productive.</p>
+        </div>
+        
+        <div class="bg-Navy-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-4">Innovative Environment</h3>
+          <p>Work on cutting-edge technologies and contribute to products used by millions of people worldwide.</p>
+        </div>
+      </div>
+
+      <h2 class="font-bold text-xl mb-8 font-Raleway sm:text-2xl">Open Positions</h2>
+      
+      <div class="grid grid-cols-1 gap-6 mb-16">
+        {positions.map((position) => (
+          <JobPosition 
+            title={position.title}
+            type={position.type}
+            description={position.description}
+          />
+        ))}
+      </div>
+
+      <h2 class="font-bold text-xl mb-8 font-Raleway sm:text-2xl">How to Apply</h2>
+      <p class="mb-8">To apply for any of our open positions, click the "Apply Now" button on the job listing. If you don't see a position that matches your skills but think you'd be a great fit for our team, send your resume to careers@fylo.com.</p>
+      
+      <div class="text-center">
+        <Button text='View All Positions' styles="w-[240px]" />
+      </div>
+    </div>
+  </section>
+</Layout>

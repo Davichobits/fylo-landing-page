@@ -1,10 +1,4 @@
-export interface ContactItems {
-  src: string;
-  alt: string;
-  text: string;
-  width: number;
-  height: number;
-}
+import type { ContactItems } from "../types/types";
 
 export const contactItems: ContactItems[] = [
   {

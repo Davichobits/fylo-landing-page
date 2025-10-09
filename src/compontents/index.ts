@@ -7,3 +7,4 @@ export {default as Footer} from './footer/Footer.astro';
 export {default as Form} from './Form.astro';
 export {default as Button} from './Button.astro';
 export {default as Header} from './Header.astro';
+export {default as JobPosition} from './JobPosition.astro';
